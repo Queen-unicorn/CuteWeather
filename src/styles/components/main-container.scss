@@ -1,0 +1,21 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 3rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $white;
+  position: sticky;
+  width: 100%;
+
+  &__icon {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    color: $taupe;
+    font-family: "Kaushan Script";
+  }
+}

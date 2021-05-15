@@ -11,10 +11,37 @@
       href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="icon" href="/src/img/icon.png" type="image/icon type" />
     <script src="/src/scripts/index.js" type="module"></script>
   </head>
   <body id="body">
-    <main id="main">123</main>
+    <header id="header">
+      <img id="header__icon" src="./src/img/icon.png" />
+      <h1 id="header__title">CuteWeather</h1>
+    </header>
+    <main id="main">
+      <section class="left-bar">
+        <div class="left-bar__search">
+          <input
+            class="left-bar__search__input"
+            type="text"
+            placeholder="Enter lan and lon"
+          />
+          <button class="left-bar__search__button">
+            <img
+              class="left-bar__search__button__image"
+              src="./src/img/search.png"
+            />
+          </button>
+        </div>
+        <div class="left-bar__current-weather"></div>
+      </section>
+      <section class="main-container"></section>
+    </main>
   </body>
 </html>
