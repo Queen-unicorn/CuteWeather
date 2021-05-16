@@ -69,10 +69,48 @@ export class LeftBar {
       }
     }
     console.log(this.forecast);
-    showLeftBar();
+    this.showLeftBar();
   }
 
   showLeftBar() {
-    const htmlStr = ``;
+    const currDay = new Date();
+    const days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    const htmlStr = `
+    <img class="left-bar__current-weather__image" src="http://openweathermap.org/img/wn/${
+      this.forecast.weather[0].icon
+    }@2x.png"/>
+    <div class="left-bar__current-weather__temperature-block">
+        <p class="left-bar__current-weather__temperature-block__temp">${
+          Math.round(+this.forecast.temp * 10) / 10
+        }</p>
+        &nbsp
+        <p class="left-bar__current-weather__temperature-block__measure">°C</p>
+    </div>
+    <p class="left-bar__current-weather__timezone">${this.forecast.timezone}</p>
+    <p class="left-bar__current-weather__time">${days[currDay.getDay()]}, ${
+      currDay.getHours() + ":" + currDay.getMinutes()
+    }</p>
+    <hr/>
+    <p class="left-bar__current-weather__clouds">${
+      this.forecast.clouds + " %"
+    }</p>
+    <p class="left-bar__current-weather__pressure">&nbsp${
+      this.forecast.pressure + " hpa"
+    }</p>`;
+    console.log(htmlStr);
+
+    const weatherContentDiv = document.getElementsByClassName(
+      "left-bar__current-weather"
+    )[0];
+
+    weatherContentDiv.innerHTML = htmlStr;
   }
 }
