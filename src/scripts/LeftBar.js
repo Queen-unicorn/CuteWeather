@@ -68,8 +68,8 @@ export class LeftBar {
         this.forecast["daily"][i][key] = fetchedInfo["daily"][i][key];
       }
     }
-    console.log(this.forecast);
     this.showLeftBar();
+    this.dispatchOnForecastLoadedEvent();
   }
 
   showLeftBar() {
@@ -86,7 +86,7 @@ export class LeftBar {
     const htmlStr = `
     <img class="left-bar__current-weather__image" src="http://openweathermap.org/img/wn/${
       this.forecast.weather[0].icon
-    }@2x.png"/>
+    }@4x.png"/>
     <div class="left-bar__current-weather__temperature-block">
         <p class="left-bar__current-weather__temperature-block__temp">${
           Math.round(+this.forecast.temp * 10) / 10
@@ -105,12 +105,18 @@ export class LeftBar {
     <p class="left-bar__current-weather__pressure">&nbsp${
       this.forecast.pressure + " hpa"
     }</p>`;
-    console.log(htmlStr);
 
     const weatherContentDiv = document.getElementsByClassName(
       "left-bar__current-weather"
     )[0];
 
     weatherContentDiv.innerHTML = htmlStr;
+  }
+
+  dispatchOnForecastLoadedEvent() {
+    const eventButtonClicked = new CustomEvent("buttonClick", {
+      detail: this.forecast,
+    });
+    document.dispatchEvent(eventButtonClicked);
   }
 }
