@@ -26,9 +26,14 @@ export class MainContainer {
                 <img class="main-container__week-forecast__container__item__img" src="http://openweathermap.org/img/wn/${
                   forecast.weather[0].icon
                 }@4x.png"/>
-                <p class="main-container__week-forecast__container__item__temp">${
-                  Math.floor(forecast.temp.max * 10) / 10
-                }</p>
+                <div class="main-container__week-forecast__container__item__temp">
+                    <p class="main-container__week-forecast__container__item__temp--max">${
+                      Math.floor(forecast.temp.max * 10) / 10
+                    } °C</p>
+                    <p class="main-container__week-forecast__container__item__temp--min">${
+                      Math.floor(forecast.temp.min * 10) / 10
+                    } °C</p>
+                </div>
             </div>`;
     }
     htmlStr += `        

@@ -43,6 +43,17 @@
           width: 5rem;
           height: 5rem;
         }
+
+        &__temp {
+          font-size: 0.8rem;
+          display: flex;
+          flex-direction: row;
+          gap: 0.4rem;
+
+          &--min {
+            color: $taupe;
+          }
+        }
       }
     }
   }
