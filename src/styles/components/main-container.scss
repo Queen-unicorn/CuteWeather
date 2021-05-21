@@ -1,16 +1,17 @@
 .main-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 1rem 4rem;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: start;
   background-color: $white;
-  position: sticky;
   width: 100%;
   box-shadow: inset 0 0 0.4rem 0 $taupe;
+  gap: 2rem;
 
   &__week-forecast {
     width: 100%;
+
     &__title {
       padding: 1rem;
       font-size: 2rem;
@@ -24,6 +25,7 @@
       flex-wrap: wrap;
       justify-content: space-around;
       width: 100%;
+      gap: 1rem;
 
       &__item {
         background-color: $lightpink;
@@ -53,6 +55,71 @@
           &--min {
             color: $taupe;
           }
+        }
+      }
+    }
+  }
+
+  &__highlight {
+    width: 100%;
+    &__title {
+      padding: 1rem;
+      font-size: 2rem;
+      color: $taupe;
+      font-family: "Kaushan Script";
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      width: 100%;
+
+      &__item {
+        background-color: $lightpink;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem;
+        box-shadow: 0.1rem 0.1rem 0.5rem $taupe;
+
+        &__title {
+          color: $taupe;
+          margin-bottom: 0.4rem;
+        }
+
+        &__temp {
+          font-size: 0.8rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.4rem;
+
+          &--min {
+            color: $taupe;
+          }
+        }
+
+        &__wind-speed {
+          font-size: 0.8rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.4rem;
+        }
+
+        &__humidity {
+          font-size: 0.8rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.4rem;
+        }
+
+        &__sunrise-sunset {
+          font-size: 0.8rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.4rem;
         }
       }
     }

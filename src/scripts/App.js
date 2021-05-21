@@ -7,7 +7,7 @@ export class App {
     const leftBar = new LeftBar(api);
     this.forecast = leftBar.forecast;
 
-    const mainContainer = new MainContainer();
+    const mainContainer = new MainContainer(api);
 
     document.addEventListener("buttonClick", (event) => {
       mainContainer.processForecast(event.detail);

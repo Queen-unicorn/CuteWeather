@@ -1,7 +1,7 @@
 import * as ErrorHandler from "./ErrorHandler";
 
 export class FetchApi {
-  search(query = "", units = "metric") {
+  forecastSearch(query = "", units = "metric") {
     if (!query) return;
     const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${
       query.split(" ")[0]

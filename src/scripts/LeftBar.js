@@ -37,7 +37,7 @@ export class LeftBar {
   }
 
   fetchApi() {
-    this.api.search(this.query).then(
+    this.api.forecastSearch(this.query).then(
       (fetchedInfo) => {
         this.processSearchResult(fetchedInfo);
       },
@@ -57,12 +57,15 @@ export class LeftBar {
       "clouds",
       "wind_speed",
       "weather",
+      "humidity",
+      "sunrise",
+      "sunset",
     ]) {
       this.forecast[key] = fetchedInfo.current[key];
     }
 
     this.forecast["daily"] = {};
-    for (let i = 1; i <= 7; ++i) {
+    for (let i = 0; i <= 7; ++i) {
       this.forecast["daily"][i] = {};
       for (let key of ["temp", "weather"]) {
         this.forecast["daily"][i][key] = fetchedInfo["daily"][i][key];
