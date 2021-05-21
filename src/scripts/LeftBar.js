@@ -33,16 +33,33 @@ export class LeftBar {
       this.searchInput.dataset.isEmpty = true;
     }
 
-    this.fetchApi();
+    this.fetchCoordApi();
   }
 
-  fetchApi() {
-    this.api.forecastSearch(this.query).then(
+  fetchCoordApi() {
+    this.api.fetchLatLon(this.query).then(
       (fetchedInfo) => {
-        this.processSearchResult(fetchedInfo);
+        this.fetchApi(fetchedInfo);
       },
       (error) => ErrorHandler.handleError(error)
     );
+  }
+
+  fetchApi(fetchedCoordInfo) {
+    if (!fetchedCoordInfo.coord) {
+      this.searchInput.dataset.isWrong = true;
+      return;
+    }
+
+    delete this.searchInput.dataset.isWrong;
+    this.api
+      .forecastSearch(fetchedCoordInfo.coord.lon, fetchedCoordInfo.coord.lat)
+      .then(
+        (fetchedInfo) => {
+          this.processSearchResult(fetchedInfo);
+        },
+        (error) => ErrorHandler.handleError(error)
+      );
   }
 
   processSearchResult(fetchedInfo) {

@@ -20,6 +20,10 @@
       border-radius: 1rem;
       border: 0.05rem solid $taupe;
       padding: 1rem;
+
+      &[data-is-wrong] {
+        border: 0.05rem solid $red;
+      }
     }
 
     &__button {
