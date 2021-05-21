@@ -87,14 +87,14 @@
 
         &__title {
           color: $taupe;
-          margin-bottom: 0.4rem;
+          margin-bottom: 0.5rem;
         }
 
         &__temp {
           font-size: 0.8rem;
           display: flex;
           flex-direction: column;
-          gap: 0.4rem;
+          gap: 0.5rem;
 
           &--min {
             color: $taupe;
@@ -105,21 +105,21 @@
           font-size: 0.8rem;
           display: flex;
           flex-direction: column;
-          gap: 0.4rem;
+          gap: 0.5rem;
         }
 
         &__humidity {
           font-size: 0.8rem;
           display: flex;
           flex-direction: column;
-          gap: 0.4rem;
+          gap: 0.5rem;
         }
 
         &__sunrise-sunset {
           font-size: 0.8rem;
           display: flex;
           flex-direction: column;
-          gap: 0.4rem;
+          gap: 0.5rem;
         }
       }
     }

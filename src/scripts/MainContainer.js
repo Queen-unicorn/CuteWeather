@@ -7,7 +7,6 @@ export class MainContainer {
   processForecast(forecast) {
     this.forecast = forecast;
     this.showForecast();
-    console.log(this.forecast);
   }
 
   showForecast() {
@@ -17,10 +16,9 @@ export class MainContainer {
 
     let htmlStr = `
     <div class="main-container__week-forecast">
-        <p class="main-container__week-forecast__title">Next week forecast</p>
+        <p class="main-container__week-forecast__title">Next week forecast for ${this.forecast.city}</p>
         <div class="main-container__week-forecast__container">`;
     for (let [key, forecast] of Object.entries(this.forecast.daily)) {
-      console.log(key);
       if (key !== "0") {
         htmlStr += ` 
             <div class="main-container__week-forecast__container__item">

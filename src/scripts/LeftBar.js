@@ -63,6 +63,8 @@ export class LeftBar {
   }
 
   processSearchResult(fetchedInfo) {
+    this.forecast.city = this.query;
+
     for (let key of ["lat", "lon", "timezone"]) {
       this.forecast[key] = fetchedInfo[key];
     }
@@ -116,7 +118,7 @@ export class LeftBar {
     </div>
     <p class="left-bar__current-weather__timezone">${this.forecast.timezone}</p>
     <p class="left-bar__current-weather__time">${days[currDay.getDay()]}, ${
-      currDay.getHours() + ":" + currDay.getMinutes()
+      currDay.getHours() + ":" + ("0" + currDay.getMinutes()).slice(-2)
     }</p>
     <hr/>
     <p class="left-bar__current-weather__clouds">${

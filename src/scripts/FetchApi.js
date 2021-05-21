@@ -12,7 +12,6 @@ export class FetchApi {
   }
 
   fetchLatLon(query) {
-    console.log(query);
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=e80bc8c57f85cc1f7f614031bc6bf037`;
     return fetch(url).then(
       (result) => result.json(),
